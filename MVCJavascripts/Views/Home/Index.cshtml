@@ -30,42 +30,64 @@
     </div>
 </div>
 
-<ul id="menu">
-
-</ul>
-
-<ul id="menu2">
-
-</ul>
+<div class="row">
+    <div class="col-md-4 animationEffect" style="display: none;">
+        <h2>test</h2>
+        <div>sdkfposdkpfksdpfksdkpfksdp fsd fsdf sdf </div>
+    </div>
+    <div class="col-md-4 animationEffect" style="display: none;">
+        <h2>test 2</h2>
+        <div>sdkfposdkpfksdpfksdkpfksdp fsd fsdf sdf </div>
+    </div>
+    <div class="col-md-4 animationEffect" style="display: none;">
+        <h2>test 3</h2>
+        <div>sdkfposdkpfksdpfksdkpfksdp fsd fsdf sdf </div>
+    </div>
+</div>
 
 @section scripts {
 <script>
-    var svar = prompt("Hvad hedder du?", "")
+    var animationEffectElements = $(".animationEffect");
+    
+    setTimeout(function () {
+        var i = 1;
+        $.each(animationEffectElements, function () {
+            var me = $(this);
+            setTimeout(function () {
+                me.show('slow');
+            }, 1000 * i);
 
-    if (svar.length > 4) {
-        alert("Yes")
-    } else {
-        alert("no");
-    }
+            i++; // i + 1
+        });
+    }, 1000);
+   
 
-    var img = $("img");
-    $(img).load(function () {
+    //var svar = prompt("Hvad hedder du?", "")
 
-    });
+    //if (svar.length > 4) {
+    //    alert("Yes")
+    //} else {
+    //    alert("no");
+    //}
 
-    function Test2(navn, menuID) {
-        var objects = new Array("Forside", "Om firma");
-        var menu = $(menuID);
+    //var img = $("img");
+    //$(img).load(function () {
 
-        for (obj in objects) {
-            menu.append("<li>" + objects[obj] + navn + "</li>");
+    //});
 
-        }
-    }
+    //function Test2(navn, menuID) {
+    //    var objects = new Array("Forside", "Om firma");
+    //    var menu = $(menuID);
+
+    //    for (obj in objects) {
+    //        menu.append("<li>" + objects[obj] + navn + "</li>");
+
+    //    }
+    //}
 
 
-    Test2(svar, "#menu");
-    Test2("Jimmi", "#menu2");
+    //Test2(svar, "#menu");
+    //Test2("Jimmi", "#menu2");
 
 </script>
 }
