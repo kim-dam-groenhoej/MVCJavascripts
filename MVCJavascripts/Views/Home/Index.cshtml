@@ -60,7 +60,15 @@
             i++; // i + 1
         });
     }, 1000);
-   
+
+    $(window).scroll(function () {
+        var scroll = $(window).scrollTop();
+
+        if (scroll > 400) {
+
+        }
+        console.log("scroll pixel position" + scroll);
+    });
 
     //var svar = prompt("Hvad hedder du?", "")
 
